@@ -48,56 +48,56 @@ unittest_teardown()
 
 unittest(test_HW_constructor)
 {
-  DAC8550 DAC(10);
-  DAC.begin();
+  DAC8550 myDAC(10);
+  myDAC.begin();
 
   for (uint16_t val = 0; val < 65500; val += 30)
   {
-    DAC.setValue(val);
-    if (DAC.getValue() != val)
+    myDAC.setValue(val);
+    if (myDAC.getValue() != val)
     {
-      fprintf(stderr, "%d -> %d\n", val, DAC.getValue());
+      fprintf(stderr, "%d -> %d\n", val, myDAC.getValue());
     }
   }
-  DAC.setValue(100);
-  assertEqual(100, DAC.getValue());
+  myDAC.setValue(100);
+  assertEqual(100, myDAC.getValue());
 }
 
 
 unittest(test_SW_constructor)
 {
-  DAC8550 DAC(4, 5, 6);
-  DAC.begin();
+  DAC8550 myDAC(4, 5, 6);
+  myDAC.begin();
   
   for (uint16_t val = 0; val < 65500; val += 30)
   {
-    DAC.setValue(val);
-    if (DAC.getValue() != val)
+    myDAC.setValue(val);
+    if (myDAC.getValue() != val)
     {
-      fprintf(stderr, "%d -> %d\n", val, DAC.getValue());
+      fprintf(stderr, "%d -> %d\n", val, myDAC.getValue());
     }
   }
-  DAC.setValue(100);
-  assertEqual(100, DAC.getValue());
+  myDAC.setValue(100);
+  assertEqual(100, myDAC.getValue());
 }
 
 
 unittest(test_powerDown)
 {
-  DAC8550 DAC(4, 5, 6);
-  DAC.begin();
+  DAC8550 myDAC(4, 5, 6);
+  myDAC.begin();
   
-  DAC.setPowerDown(DAC8550_POWERDOWN_NORMAL);
-  assertEqual(DAC8550_POWERDOWN_NORMAL, DAC.getPowerDownMode());
+  myDAC.setPowerDown(DAC_POWERDOWN_NORMAL);
+  assertEqual(DAC_POWERDOWN_NORMAL, myDAC.getPowerDownMode());
   
-  DAC.setPowerDown(DAC8550_POWERDOWN_1K);
-  assertEqual(DAC8550_POWERDOWN_1K, DAC.getPowerDownMode());
+  myDAC.setPowerDown(DAC8550_POWERDOWN_1K);
+  assertEqual(DAC8550_POWERDOWN_1K, myDAC.getPowerDownMode());
   
-  DAC.setPowerDown(DAC8550_POWERDOWN_100K);
-  assertEqual(DAC8550_POWERDOWN_100K, DAC.getPowerDownMode());
+  myDAC.setPowerDown(DAC8550_POWERDOWN_100K);
+  assertEqual(DAC8550_POWERDOWN_100K, myDAC.getPowerDownMode());
   
-  DAC.setPowerDown(DAC8550_POWERDOWN_HIGH_IMP);
-  assertEqual(DAC8550_POWERDOWN_HIGH_IMP, DAC.getPowerDownMode());
+  myDAC.setPowerDown(DAC8550_POWERDOWN_HIGH_IMP);
+  assertEqual(DAC8550_POWERDOWN_HIGH_IMP, myDAC.getPowerDownMode());
 }
 
 
