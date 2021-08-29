@@ -1,6 +1,6 @@
 {
   "name": "DAC8550",
-  "keywords": "DAC8550, SPI, digital, analog, convertor",
+  "keywords": "DAC8550, SPI, DAC, digital, analog, convertor",
   "description": "Arduino library for DAC8550 SPI Digital Analog Convertor",
   "authors":
   [
