@@ -10,14 +10,14 @@
 
 
 // SW SPI pins 4,5,6
-DAC8550 DAC(4, 5, 6);
+DAC8550 myDAC(4, 5, 6);
 
 
 void setup()
 {
   Serial.begin(115200);
   Serial.println(__FILE__);
-  DAC.begin();
+  myDAC.begin();
 }
 
 void loop()
@@ -25,7 +25,7 @@ void loop()
   // minimal sawtooth
   for (uint16_t val = 0; val < 65500; val+= 30)
   {
-    DAC.setValue(val);
+    myDAC.setValue(val);
     int av = analogRead(A0);
 
     Serial.print(val);
@@ -37,7 +37,7 @@ void loop()
   for (long i = 0; i < 360; i++ )
   {
     uint16_t s = 32767 + 32767 * sin( i * (PI / 180.0));
-    DAC.setValue(s);
+    myDAC.setValue(s);
     int av = analogRead(A0);
     Serial.print(i);
     Serial.print("\t ==> \t");

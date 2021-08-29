@@ -9,7 +9,7 @@
 #include "DAC8550.h"
 
 
-DAC8550 DAC(7);
+DAC8550 myDAC(7);
 
 
 uint32_t lastTime = 0;
@@ -20,7 +20,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println(__FILE__);
-  DAC.begin();
+  myDAC.begin();
 }
 
 
@@ -33,12 +33,12 @@ void loop()
     if (state == 0)
     {
       state = 1;
-      DAC.setValue(0);
+      myDAC.setValue(0);
     }
     else
     {
       state = 0;
-      DAC.setValue(65535);
+      myDAC.setValue(65535);
     }
   }
 }
