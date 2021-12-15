@@ -8,7 +8,7 @@
 
 # DAC8550 - experimental
 
-Arduino library for DAC8550 SPI Digital Analog Convertor
+Arduino library for DAC8550 SPI Digital Analog Convertor.
 
 
 ## Description
@@ -25,8 +25,8 @@ It is derived from the DAC8551 library.
 ### Core
 
 - **DAC8550(uint8_t slaveSelect)** Constructor for hardware SPI, the slaveSelect pin needs to be defined.
-- **DAC8550(uint8_t spiData, uint8_t spiClock, uint8_t slaveSelect)** Constructor for the software SPI
-- **void begin()** initializes all pins to default state
+- **DAC8550(uint8_t spiData, uint8_t spiClock, uint8_t slaveSelect)** Constructor for the software SPI.
+- **void begin()** initializes all pins to default state.
 - **void setValue(uint16_t value)** set the value of the channel to 0 - 65535
 - **uint16_t getValue()** returns the last value written.
 
@@ -64,12 +64,12 @@ check datasheet for details.
 - **uint8_t getPowerDownMode()** returns last written mode.
 
 
-| Power down mode         | Value |
-|:------------------------|:-----:|
-| DAC8550_POWERDOWN_NORMAL   | 0 |
-| DAC8550_POWERDOWN_1K       | 1 |
-| DAC8550_POWERDOWN_100K     | 2 |
-| DAC8550_POWERDOWN_HIGH_IMP | 3 |
+| Power down mode            | Value |
+|:---------------------------|:-----:|
+| DAC8550_POWERDOWN_NORMAL   |   0   |
+| DAC8550_POWERDOWN_1K       |   1   |
+| DAC8550_POWERDOWN_100K     |   2   |
+| DAC8550_POWERDOWN_HIGH_IMP |   3   |
 
 
 
