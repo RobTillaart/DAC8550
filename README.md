@@ -1,9 +1,9 @@
 
-[![Arduino CI](https://github.com/RobTillaart/DAC8551/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino CI](https://github.com/RobTillaart/DAC8550/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/RobTillaart/DAC8550/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RobTillaart/DAC8550/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/RobTillaart/DAC8550/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/RobTillaart/DAC8550/actions/workflows/jsoncheck.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/DAC8551/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/RobTillaart/DAC8551.svg?maxAge=3600)](https://github.com/RobTillaart/DAC8551/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RobTillaart/DAC8550/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/RobTillaart/DAC8550.svg?maxAge=3600)](https://github.com/RobTillaart/DAC8550/releases)
 
 
 # DAC8550 - experimental
