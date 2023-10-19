@@ -3,6 +3,7 @@
 //  AUTHOR: Rob Tillaart
 // PURPOSE: Arduino library for DAC8550 SPI Digital Analog Convertor
 // VERSION: 0.1.4
+//    DATE: 2021-02-04
 //     URL: https://github.com/RobTillaart/DAC8550
 
 
