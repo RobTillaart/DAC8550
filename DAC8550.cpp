@@ -10,9 +10,9 @@
 #include "DAC8550.h"
 
 
-DAC8550::DAC8550(uint8_t slaveSelect, __SPI_CLASS__ * spi)
+DAC8550::DAC8550(uint8_t select, __SPI_CLASS__ * spi)
 {
-  _select  = slaveSelect;
+  _select  = select;
   _dataOut = 255;
   _clock   = 255;
   _mySPI   = spi
@@ -20,9 +20,9 @@ DAC8550::DAC8550(uint8_t slaveSelect, __SPI_CLASS__ * spi)
 }
 
 
-DAC8550::DAC8550(uint8_t slaveSelect, uint8_t spiData, uint8_t spiClock)
+DAC8550::DAC8550(uint8_t select, uint8_t spiData, uint8_t spiClock)
 {
-  _select  = slaveSelect;
+  _select  = select;
   _dataOut = spiData;
   _clock   = spiClock;
   _mySPI   = NULL
