@@ -10,19 +10,23 @@
 #include "DAC8550.h"
 
 
-DAC8550::DAC8550(uint8_t slaveSelect)
+DAC8550::DAC8550(uint8_t slaveSelect, , __SPI_CLASS__ * spi = &SPI))
 {
-  _hwSPI  = true;
-  _select = slaveSelect;
+  _select  = slaveSelect;
+  _dataOut = 255;
+  _clock   = 255;
+  _mySPI   = spi
+  _hwSPI   = true;
 }
 
 
-DAC8550::DAC8550(uint8_t spiData, uint8_t spiClock, uint8_t slaveSelect)
+DAC8550::DAC8550(uint8_t slaveSelect, uint8_t spiData, uint8_t spiClock)
 {
-  _hwSPI   = false;
+  _select  = slaveSelect;
   _dataOut = spiData;
   _clock   = spiClock;
-  _select  = slaveSelect;
+  _mySPI   = NULL
+  _hwSPI   = false;
 }
 
 
@@ -37,24 +41,8 @@ void DAC8550::begin()
 
   if(_hwSPI)
   {
-    #if defined(ESP32)
-    if (_useHSPI)      //  HSPI
-    {
-      mySPI = new SPIClass(HSPI);
-      mySPI->end();
-      mySPI->begin(14, 12, 13, _select);   //  CLK=14  MISO=12  MOSI=13
-    }
-    else               //  VSPI
-    {
-      mySPI = new SPIClass(VSPI);
-      mySPI->end();
-      mySPI->begin(18, 19, 23, _select);   //  CLK=18  MISO=19  MOSI=23
-    }
-    #else              //  generic hardware SPI
-    mySPI = &SPI;
-    mySPI->end();
-    mySPI->begin();
-    #endif
+    _mySPI->end();
+    _mySPI->begin();
     delay(1);
   }
   else                 //  software SPI
@@ -79,8 +67,8 @@ void DAC8550::setGPIOpins(uint8_t clk, uint8_t miso, uint8_t mosi, uint8_t selec
   pinMode(_select, OUTPUT);
   digitalWrite(_select, HIGH);
 
-  mySPI->end();  //  disable SPI 
-  mySPI->begin(clk, miso, mosi, select);
+  _mySPI->end();  //  disable SPI 
+  _mySPI->begin(clk, miso, mosi, select);
 }
 #endif
 
@@ -131,11 +119,11 @@ void DAC8550::updateDevice()
   digitalWrite(_select, LOW);
   if (_hwSPI)
   {
-    mySPI->beginTransaction(_spi_settings);
-    mySPI->transfer(configRegister);
-    mySPI->transfer(_value >> 8);
-    mySPI->transfer(_value & 0xFF);
-    mySPI->endTransaction();
+    _mySPI->beginTransaction(_spi_settings);
+    _mySPI->transfer(configRegister);
+    _mySPI->transfer(_value >> 8);
+    _mySPI->transfer(_value & 0xFF);
+    _mySPI->endTransaction();
   }
   else // Software SPI 
   {
