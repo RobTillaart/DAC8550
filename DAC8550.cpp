@@ -45,7 +45,7 @@ void DAC8550::begin()
     _mySPI->begin();
     delay(1);
   }
-  else                 //  software SPI
+  else  //  SOFTWARE SPI
   {
     pinMode(_dataOut, OUTPUT);
     pinMode(_clock, OUTPUT);
