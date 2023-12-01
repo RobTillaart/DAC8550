@@ -51,7 +51,7 @@ public:
   bool     usesHWSPI() { return _hwSPI; };
 
 
-private:
+protected:
   uint8_t  _dataOut     = 255;
   uint8_t  _clock       = 255;
   uint8_t  _select      = 255;

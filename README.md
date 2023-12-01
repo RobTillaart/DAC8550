@@ -31,6 +31,17 @@ Also it makes the library a bit simpler to maintain.
 
 Note order of parameters changed.
 
+
+#### Related
+
+- https://github.com/RobTillaart/DAC8550
+- https://github.com/RobTillaart/DAC8551
+- https://github.com/RobTillaart/DAC8552
+- https://github.com/RobTillaart/DAC8554
+- https://github.com/RobTillaart/MCP_DAC
+- https://github.com/RobTillaart/AD5680  (18 bit DAC)
+
+
 ## Interface
 
 ```cpp
