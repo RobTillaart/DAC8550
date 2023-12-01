@@ -10,7 +10,7 @@
 #include "DAC8550.h"
 
 
-DAC8550::DAC8550(uint8_t slaveSelect, , __SPI_CLASS__ * spi = &SPI))
+DAC8550::DAC8550(uint8_t slaveSelect, __SPI_CLASS__ * spi)
 {
   _select  = slaveSelect;
   _dataOut = 255;

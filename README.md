@@ -41,7 +41,7 @@ Note order of parameters changed.
 
 - **DAC8550(uint8_t select, SPIClassRP2040 \* spi = &SPI)** Constructor for hardware SPI, RP2040.
 - **DAC8550(uint8_t select, SPIClass \* spi = &SPI)** Constructor for hardware SPI, other.
-- **DAC8550(uint8_t slaveSelect, uint8_t spiData, uint8_t spiClock)** Constructor for the software SPI.
+- **DAC8550(uint8_t select, uint8_t spiData, uint8_t spiClock)** Constructor for the software SPI.
 - **void begin()** initializes library internals.
 - **void setValue(uint16_t value)** set the value of the channel to 0 - 65535
 - **uint16_t getValue()** returns the last value written.

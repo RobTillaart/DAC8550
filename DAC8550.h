@@ -34,7 +34,7 @@ class DAC8550
 {
 public:
   DAC8550(uint8_t select, __SPI_CLASS__ * spi = &SPI);
-  DAC8550(uint8_t slaveSelect, uint8_t spiData, uint8_t spiClock);
+  DAC8550(uint8_t select, uint8_t spiData, uint8_t spiClock);
 
   void     begin();
 
