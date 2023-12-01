@@ -66,7 +66,7 @@ private:
   void     swSPI_transfer(uint8_t value);
 
 
-  __SPI_CLASS__ * mySPI;
+  __SPI_CLASS__ * _mySPI;
   SPISettings   _spi_settings;
 };
 
