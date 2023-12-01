@@ -58,21 +58,6 @@ void DAC8550::begin()
 }
 
 
-#if defined(ESP32)
-void DAC8550::setGPIOpins(uint8_t clk, uint8_t miso, uint8_t mosi, uint8_t select)
-{
-  _clock   = clk;
-  _dataOut = mosi;
-  _select  = select;
-  pinMode(_select, OUTPUT);
-  digitalWrite(_select, HIGH);
-
-  _mySPI->end();  //  disable SPI 
-  _mySPI->begin(clk, miso, mosi, select);
-}
-#endif
-
-
 //  value = 0..65535
 void DAC8550::setValue(uint16_t value)
 {
